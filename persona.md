@@ -2,8 +2,7 @@ Persona:
 Junger Mann, der im Erwachsenenalter die Diagnose Diabetes erhalten hat.
 Vorlieben: Technick, Sport, Familienmensch
 
-Persona 2
-## Persona
+## Persona 2
 ### Beschreibung der Person
 Judith Schmidt ist eine 35-jährige Diabetikerin und Lehrerin mit einer Leidenschaft für Literatur und Kunst. Sie legt Wert auf einen gesunden Lebensstil und sucht ständig nach Möglichkeiten, ihre Diabetes besser zu managen.
 
