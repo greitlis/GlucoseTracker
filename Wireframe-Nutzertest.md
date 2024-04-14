@@ -41,5 +41,5 @@ Weiter soll eruiert werden, ob der App noch Eigenschaften, Fähigkeiten, Tools f
 - Tagebuchseite etwas vereinfachen, wenn es auch für Kinder sein soll
   
 ### Neue Probleme?
-- Sollen wir uns der einfachheithalber auf ein Achema festlegen oder soll eine Flexibilität je nach Nutzer ermöglicht werden?
+- Sollen wir uns der einfachheithalber auf ein Schema festlegen oder soll eine Flexibilität je nach Nutzer ermöglicht werden?
 - Wäre eine sollche individuelle Einstellung je nach Nutzer realisierbar/ für uns machbar?
