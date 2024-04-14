@@ -5,9 +5,9 @@ Weiter soll eruiert werden, ob der App noch Eigenschaften, Fähigkeiten, Tools f
 
 ## Protikoll Test:
 Kurze Instruktion des Testleiters: "Stell dir vor, du bist ein Diabetespatient und sollt nun eine App benutzen, um deine Glucosewerte und dein Verordetes Insulinschema zu verwalten."
-# Nutzer: Studiert das Wireframe Bild für Bild. Loginseite ist klar (Bild 1), Auswahlmenüe (Bild 2) , Verordnungen (Bild 3): Hier kann man die Verordnung des Arztes eintragen und über den Bearbeitungsknopf
+Nutzer: Studiert das Wireframe Bild für Bild. Loginseite ist klar (Bild 1), Auswahlmenüe (Bild 2) , Verordnungen (Bild 3): Hier kann man die Verordnung des Arztes eintragen und über den Bearbeitungsknopf
 ändern. Richtig?
-# Testleiter: Richtig. 
+Testleiter: Richtig. 
 Nutzer: Wozu ist die nächte Rubrik Korrekturschema (Bild 4)?
 Testleiter: Was denkst du, was trägt wer hier ein?
 Nutzer: Der Artz träg etwas ein.
