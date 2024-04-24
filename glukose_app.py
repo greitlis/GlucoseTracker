@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 
 
 def init_github():
@@ -20,10 +21,16 @@ def init_dataframe():
     else:
         st.session_state.df = pd.DataFrame(columns=DATA_COLUMNS)
 
+def eingabe():
+    number = st.number_input("Eingabe Blutzuckerwert", value=None, placeholder="Type a number...")
+    st.write('Dein aktueller Blutzucker ist ', number)
+
 
 def main():
-    st.title("My Glucose App with Funktion")
+    st.title("My Glucose App")
     st.subheader("Enter Data")
+    eingabe()
+
 
 if __name__ == "__main__":
     main()
