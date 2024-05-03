@@ -9,12 +9,12 @@
 - Benutzer kann sich neuregistrieren
 - Benutzer kann sich einloggen
 - Passwörter werden verschlüsselt zusammen mit den zugehörigen userNames in einem CSV auf Github gespeichert
-- Benutzername  darf nur einmal vorkommen--> User-ID
+- Benutzername  darf nur einmal vorkommen--> evtl. User-ID
 - Filterfunktion: Dem Benutzer werden nur seine eigenen Blutzuckerwerte angezeigt
 
 
-## Advanced Version ( Wenn noch zeit bis zur Abgabe):
-- Layout der Eingabeseite: Tagebuchseite
+## Advanced Version:
+- Layout der Eingabeseite: Tagebuchseite 
 - Zusätliche Seiten, wie Verlaufgrafik, Verordnungen
 
   
