@@ -96,24 +96,27 @@ def userLogin():
     else:
         lf = st.session_state.github.read_df(LOGIN_FILE)
         
-        user_list = lf["userName"]
+        userfound = False 
+        for index,row in lf.iterrows():
+            if row[LOGIN_COLUMNS[0]] == userName:
+                userfound = True
+                pwd_check(row[LOGIN_COLUMNS[1]])
+                break 
+        if userfound == False:
+            st.error("Falsches Passwort oder Benutzername")
+            
 
-        for item in user_list:
-            if item == userName:
-                pwd_check()
-
-def pwd_check():
-    lf = st.session_state.github.read_df(LOGIN_FILE)
+def pwd_check(pwdHash):
     auth = pwd.encode()
     valHash = hashlib.sha3_512(auth).hexdigest() 
-    pwd_list = lf["pwdHash"]
-
-    for item in pwd_list:
-        if item == valHash:
-            st.session_state.logged_in = True
-            st.text(f"login erfolgreich, Willkommen {userName}")
-            #sleep(0.5)
-            #st. switch_page("pages/GlukoseTraker.py")
+    if valHash == pwdHash:
+        st.session_state.logged_in = True
+        st.text(f"login erfolgreich, Willkommen {userName}")
+    else:
+        st.error("Falsches Passwort oder Benutzername")
+       
+    
+   
             
 
        
