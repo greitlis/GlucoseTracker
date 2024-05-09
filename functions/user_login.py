@@ -46,6 +46,11 @@ def registerUser():
     elif userName == "":
         st.text("Bitte geben Sie einen gültigen Usernamen ein. \n")
     elif pwd == conf_pwd:
+            
+        # Check if the username already exists
+        if userName in st.session_state.credentials[LOGIN_COLUMNS[0]].values:
+            st.error("Benutzername existiert bereits. Bitte wählen Sie einen anderen.")
+            return
 
         encoded_pwd = conf_pwd.encode()
         pwdHash = hashlib.sha3_512(encoded_pwd).hexdigest()
