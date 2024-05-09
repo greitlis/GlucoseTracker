@@ -13,3 +13,4 @@ git config --global user.name "Meret Niklaus"
 - [ ] Verlauf darstellen
 - [ ] Logout Button
 - [ ] Layout Sidebar (glukose app)
+- [ ] evtl. Anbindung API
