@@ -50,11 +50,17 @@ def save():
             return
         
     new_entry_df = pd.DataFrame([new_entry])
-    st.session_state.glucose_data = pd.concat([st.session_state.glucose_data, new_entry_df], ignore_index=True)
 
+    # Add the new entry to the user's DataFrame
+    st.session_state.glucose_data = pd.concat([st.session_state.glucose_data, new_entry_df], ignore_index=True)
+    
+    # Add the new entry to the DataFrame containing all users' data
+    df_all_users = data.get_glucose_df_all_users()
+    df_all_users = pd.concat([df_all_users, new_entry_df], ignore_index=True)
+    
     # Save the updated DataFrame to GitHub
     commit_msg = f"add measurement at {measure_date} {measure_time}"
-    st.session_state.github.write_df(DATA_FILE, st.session_state.glucose_data, commit_msg)
+    st.session_state.github.write_df(DATA_FILE, df_all_users, commit_msg)
 
     st.success("Der Glukose-Wert wurde erfolgreich gespeichert!")
     

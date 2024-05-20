@@ -33,7 +33,7 @@ def init_tabs():
                               
     with tab2:
         st.subheader("Verlauf")
-        tab2.bar_chart(data = st.session_state.glucose_data[DATA_COLUMNS], x = ("measure_date"), y = ("blood_sugar"), color= ("measure_time"))
+        tab2.line_chart(data = st.session_state.glucose_data, x = ("measure_date"), y = ("blood_sugar"), color= None)
 
 
 
