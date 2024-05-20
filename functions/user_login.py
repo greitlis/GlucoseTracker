@@ -1,32 +1,30 @@
 import streamlit as st
 import pandas as pd
 import hashlib
-#from time import sleep
+
 
 LOGIN_FILE = "credentials.csv"
 LOGIN_COLUMNS = ["userName", "pwdHash"]
 
 
-## Registrierung und login seperate funktionen schreiben und nacheinander schalten, eine aufgabe pro funktion
 
 def choice():
     global userName
     global pwd
     global conf_pwd
 
-    #lf = st.session_state.github.read_df(LOGIN_FILE)
-    #st.dataframe(lf)
+    
 
     choice = st.selectbox("Login / neu registrieren", ["login", "newUser"])
     if choice == "login":
-        #login()
+
         userName = st.text_input("Benutzername")
         pwd = st.text_input("Passwort", type= 'password')
 
         st.button("login", type="primary", on_click = userLogin)
 
     else:
-        #signup()
+        
         userName = st.text_input("Benutzername")
         pwd = st.text_input("Passwort", type = 'password')
         conf_pwd = st.text_input("Passwort bestätigen", type = 'password')
@@ -72,17 +70,13 @@ def registerUser():
         st.session_state.github.write_df(LOGIN_FILE, st.session_state.credentials, commit_msg)
         st.session_state.logged_in = True
         st.success("Sie haben sich erfolgreich registriert.")
-        #sleep(0.5)
-        
-        #st.switch_page("pages/GlukoseTraker.py")
-        
+            
 
     else:
         st.text("Das Passwort stimmt nicht mit der Bestätigung überein. \n")
     
 
-#def loginRead():
-    #lf = pd.read_csv("...DeinPfad/Auto.csv",sep=";")
+
 
 
 def userLogin():

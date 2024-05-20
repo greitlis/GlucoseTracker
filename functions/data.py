@@ -3,7 +3,7 @@ import pandas as pd
 from functions.github_contents import GithubContents
 
 DATA_FILE = "glucose_measurements.csv"
-DATA_COLUMNS = ["blood_sugar", "measure_date", "measure_time"]
+DATA_COLUMNS = ["logged_in_user", "measure_date", "measure_time","blood_sugar", "Insulingabe"]
 
 def init_github():
     """Initialize the GithubContents object."""

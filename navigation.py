@@ -16,18 +16,15 @@ def make_sidebar():
     with st.sidebar:
         
         if st.session_state.get("logged_in", False):
-            st.page_link("pages/01_Werteingabe.py", label="Werteingabe", icon="💉")
+            st.page_link("pages/01_🩸_Werteingabe.py", label="Werteingabe", icon="🩸")
 
-            if st.button("Log out"):
-                    logout()
-        elif get_current_page_name() != "glukose_app":
+            
+        elif get_current_page_name() != "Home":
             # If anyone tries to access a secret page without being logged in,
             # redirect them to the login page
-            st.switch_page("glukose_app.py")
+            st.switch_page("Home.py")
 
 
 def logout():
     st.session_state.logged_in = False
-    st.info("Logged out successfully!")
-    sleep(0.5)
-    st.switch_page("glukose_app.py")
+    st.info("Sie haben sich erfolgreich ausgeloggt")

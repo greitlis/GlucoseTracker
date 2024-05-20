@@ -1,0 +1,74 @@
+import streamlit as st
+import pandas as pd
+from datetime import datetime
+from functions.data import DATA_COLUMNS, DATA_FILE
+from functions.user_login import LOGIN_COLUMNS, LOGIN_FILE
+import functions.data as data
+import os
+from time import sleep
+from navigation import logout
+
+st.set_page_config(page_title= "Glukosetracker", page_icon="🩸", layout="centered", initial_sidebar_state="auto", menu_items= None)
+
+def eingabe():
+    global blood_sugar
+    global measure_date
+    global measure_time
+    global logged_in_user
+    global insulingabe
+    
+    st.title("Glucosetracker")
+    with st.container():
+        col1, col2, col3 = st.columns(3)
+        col1.image("glucose2_2.jpg")
+        col2.image("blooddrop.jpg")
+        col3.image("glucose2_2.jpg")
+        
+    st.subheader("Werteingabe")
+
+    logged_in_user = os.getlogin() ## stimmt so nicht, gibt den local user zurück, nicht den in der APP eingelogten.
+    blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
+    measure_date = st.date_input("Datum", datetime.now(), format="DD.MM.YYYY")
+    measure_time = st.time_input("Uhrzeit", datetime.now())
+    insulingabe = st.checkbox
+
+    st.button("Save", type="primary", on_click=save)
+
+def save():
+   
+    new_entry = {
+
+        DATA_COLUMNS[0]: logged_in_user,
+        DATA_COLUMNS[3]: blood_sugar,
+        DATA_COLUMNS[1]: measure_date,
+        DATA_COLUMNS[2]: measure_time,
+        DATA_COLUMNS[4]: insulingabe
+    }
+    for key, value in new_entry.items():
+        if value == None:
+            st.error(f"Bitte ergänze das Feld '{key}'")
+            return
+        
+    new_entry_df = pd.DataFrame([new_entry])
+    st.session_state.glucose_data = pd.concat([st.session_state.glucose_data, new_entry_df], ignore_index=True)
+
+    # Save the updated DataFrame to GitHub
+    commit_msg = f"add measurement at {measure_date} {measure_time}"
+    st.session_state.github.write_df(DATA_FILE, st.session_state.glucose_data, commit_msg)
+
+    st.success("Der Glukose-Wert wurde erfolgreich gespeichert!")
+    
+
+blood_sugar: float
+measure_date: datetime.date
+measure_time: datetime.time
+
+if __name__ == "__main__":
+    
+    if st.session_state.get("logged_in", False)== False:
+        st.error("Sie müssen sich zuerst einloggen.")
+        st.stop()
+        
+    data.init_dataframe()
+    eingabe()
+    st.button("log out", type="primary", on_click = logout) #generates an errormessage but loggs out succesfully?

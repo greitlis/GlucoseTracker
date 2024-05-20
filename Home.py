@@ -40,10 +40,12 @@ def main():
     init_logged_in()
     nav.make_sidebar()  
     usr.choice()
+    st.image("protokoll.jpg")
 
     if st.session_state.logged_in == True:
-        st.switch_page("pages/01_Werteingabe.py")
+        st.switch_page("pages/01_🩸_Werteingabe.py")
      
+
 
 
 
