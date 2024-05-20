@@ -2,8 +2,10 @@ import streamlit as st
 import functions.data as data
 from functions.data import DATA_COLUMNS, DATA_FILE
 from functions.user_login import LOGIN_COLUMNS
-from time import sleep
 from navigation import logout
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 
@@ -31,10 +33,16 @@ def init_tabs():
                                 "Insulingabe", 
                                 default = False,)}, hide_index=True)# Checkbox column funktioniert leider nicht
                               
+ 
     with tab2:
         st.subheader("Verlauf")
-        tab2.line_chart(data = st.session_state.glucose_data, x = ("measure_date"), y = ("blood_sugar"), color= None)
-
+        Werte = st.session_state.glucose_data
+        Werte['measure_date'] = Werte['measure_date'].astype(str)
+        Werte['measure_time'] = Werte['measure_time'].astype(str)
+        Werte['Datetime'] = pd.to_datetime(Werte['measure_date'] + ' ' + Werte['measure_time'])
+        Werte = Werte.set_index('Datetime')
+        tab2.line_chart(data = st.session_state.glucose_data, x = "Datetime", y = ("blood_sugar"), color= None)
+        
 
 
 if __name__ == "__main__":

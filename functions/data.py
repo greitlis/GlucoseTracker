@@ -30,3 +30,4 @@ def get_glucose_df_all_users():
         df = st.session_state.github.read_df(DATA_FILE)
     else:
         df = pd.DataFrame(columns=DATA_COLUMNS)
+    return df
