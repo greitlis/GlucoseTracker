@@ -19,6 +19,8 @@ def init_dataframe():
     if 'glucose_data' in st.session_state:
         pass
     elif st.session_state.github.file_exists(DATA_FILE):
-        st.session_state.glucose_data = st.session_state.github.read_df(DATA_FILE)
+        df = st.session_state.github.read_df(DATA_FILE)
+        df_filter = df.loc[df[DATA_COLUMNS[0]]== st.session_state.username] 
+        st.session_state.glucose_data = df_filter
     else:
         st.session_state.glucose_data = pd.DataFrame(columns=DATA_COLUMNS)

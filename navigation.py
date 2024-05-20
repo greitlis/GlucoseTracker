@@ -27,4 +27,6 @@ def make_sidebar():
 
 def logout():
     st.session_state.logged_in = False
+    st.session_state.username = None
+    del st.session_state["glucose_data"]
     st.info("Sie haben sich erfolgreich ausgeloggt")

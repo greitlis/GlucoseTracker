@@ -26,11 +26,11 @@ def eingabe():
         
     st.subheader("Werteingabe")
 
-    logged_in_user = os.getlogin() ## stimmt so nicht, gibt den local user zurück, nicht den in der APP eingelogten.
+    logged_in_user = st.session_state.username
     blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
     measure_date = st.date_input("Datum", datetime.now(), format="DD.MM.YYYY")
     measure_time = st.time_input("Uhrzeit", datetime.now())
-    insulingabe = st.checkbox
+    insulingabe = st.checkbox ("Insulingabe erfolgt")
 
     st.button("Save", type="primary", on_click=save)
 
@@ -71,4 +71,4 @@ if __name__ == "__main__":
         
     data.init_dataframe()
     eingabe()
-    st.button("log out", type="primary", on_click = logout) #generates an errormessage but loggs out succesfully?
+    st.button("log out", type="primary", on_click = logout) 

@@ -69,6 +69,7 @@ def registerUser():
         commit_msg = f"add user {userName}"
         st.session_state.github.write_df(LOGIN_FILE, st.session_state.credentials, commit_msg)
         st.session_state.logged_in = True
+        st.session_state.username = userName
         st.success("Sie haben sich erfolgreich registriert.")
             
 
@@ -94,7 +95,13 @@ def userLogin():
         for index,row in lf.iterrows():
             if row[LOGIN_COLUMNS[0]] == userName:
                 userfound = True
-                pwd_check(row[LOGIN_COLUMNS[1]])
+                is_pwd_right = pwd_check(row[LOGIN_COLUMNS[1]])
+                if is_pwd_right == True:
+                    st.session_state.logged_in = True
+                    st.session_state.username = userName
+                    st.text(f"login erfolgreich, Willkommen {userName}")
+                else:
+                    st.error("Falsches Passwort oder Benutzername")
                 break 
         if userfound == False:
             st.error("Falsches Passwort oder Benutzername")
@@ -104,10 +111,10 @@ def pwd_check(pwdHash):
     auth = pwd.encode()
     valHash = hashlib.sha3_512(auth).hexdigest() 
     if valHash == pwdHash:
-        st.session_state.logged_in = True
-        st.text(f"login erfolgreich, Willkommen {userName}")
+        return True    
     else:
-        st.error("Falsches Passwort oder Benutzername")
+        return False
+        
        
     
    

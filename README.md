@@ -9,8 +9,8 @@ git config --global user.name "Meret Niklaus"
 ```                    
 
 ## To dos
-- [ ] Speichern der Werte pro User
+- [x] Speichern der Werte pro User
 - [ ] Verlauf darstellen
-- [ ] Logout Button
-- [ ] Layout Sidebar (glukose app)
+- [x] Logout Button
+- [x] Layout Sidebar (glukose app)
 - [ ] evtl. Anbindung API
