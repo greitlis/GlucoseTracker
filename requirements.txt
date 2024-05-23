@@ -3,3 +3,4 @@ requests
 matplotlib
 streamlit-authenticator
 streamlit
+reportlab

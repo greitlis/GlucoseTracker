@@ -3,9 +3,11 @@ import functions.data as data
 from functions.data import DATA_COLUMNS, DATA_FILE
 from functions.user_login import LOGIN_COLUMNS
 from navigation import logout
+import functions.export as export
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.backends.backend_pdf import PdfPages
 
 
 
@@ -23,7 +25,8 @@ with st.container():
 def init_tabs():
     tab1, tab2 = st.tabs(["Protokoll :book:", "Verlauf 📈"])
     with tab1:
-        VERLAUF_df = st.dataframe(data = st.session_state.glucose_data[DATA_COLUMNS], use_container_width=True,
+        df =st.session_state.glucose_data
+        VERLAUF_df = st.dataframe(data = df[DATA_COLUMNS], use_container_width=True,
                               column_order= ("measure_date", "measure_time", "blood_sugar", "Insulingabe"),
                               column_config= {
                                 "measure_date": st.column_config.Column(label="Datum"),
@@ -31,9 +34,37 @@ def init_tabs():
                                 "blood_sugar": st.column_config.Column(label="Glukosewert"),
                                 "Insulingabe" : st.column_config.CheckboxColumn(
                                 "Insulingabe", 
-                                default = False,)}, hide_index=True)# Checkbox column funktioniert leider nicht
-                              
- 
+                                default = False,)}, hide_index=True)
+    
+        # Remove the 'logged_in_user' column
+        df = df.drop(columns=['logged_in_user'])
+
+        # Translation dictionary
+        translation_dict = {
+            'True': 'Ja',
+            'False': 'Nein'
+        }
+
+        # Translate the 'Insulinabgabe' column
+        df['Insulingabe'] = df['Insulingabe'].map(translation_dict)
+
+        # Translation dictionary for column titles
+        translation_dict_title = {
+            'measure_date': 'Messdatum',
+            'blood_sugar': 'Blutzucker',
+            'measure_time': 'Messzeit'
+        }
+
+        # Rename columns using the translation dictionary with title
+        df = df.rename(columns=translation_dict_title)
+
+
+        # Get the binary data of the PDF
+        pdf_data = export.dataframe_to_pdf_bytes(df, st.session_state.username)
+        username = st.session_state.username
+        st.download_button("Download Protokoll", pdf_data, "Messwerte_" + username + ".pdf", help="Downloaden Sie das Protokoll als PDF-Datei", mime="application/pdf")                              
+    
+
     with tab2:
         st.subheader("Verlauf")
         Werte = st.session_state.glucose_data
