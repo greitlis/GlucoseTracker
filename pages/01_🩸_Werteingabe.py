@@ -1,11 +1,9 @@
+import pytz
 import streamlit as st
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timezone
 from functions.data import DATA_COLUMNS, DATA_FILE
-from functions.user_login import LOGIN_COLUMNS, LOGIN_FILE
 import functions.data as data
-import os
-from time import sleep
 from navigation import logout
 
 st.set_page_config(page_title= "Glukosetracker", page_icon="🩸", layout="centered", initial_sidebar_state="auto", menu_items= None)
@@ -28,8 +26,16 @@ def eingabe():
 
     logged_in_user = st.session_state.username
     blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
-    measure_date = st.date_input("Datum", datetime.now(), format="DD.MM.YYYY")
-    measure_time = st.time_input("Uhrzeit", value = "now")
+    
+    # Get the current time in UTC
+    utc_now = datetime.now(timezone.utc)
+
+    # Convert UTC time to a European timezone (e.g., Berlin timezone)
+    zurich_timezone = pytz.timezone('Europe/Zurich')
+    zurich_now = utc_now.replace(tzinfo=pytz.utc).astimezone(zurich_timezone)
+
+    measure_date = st.date_input("Datum", zurich_now, format="DD.MM.YYYY")
+    measure_time = st.time_input("Uhrzeit", value = zurich_now.time())
     insulingabe = st.checkbox ("Insulingabe erfolgt")
 
     st.button("Save", type="primary", on_click=save)
