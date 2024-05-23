@@ -29,7 +29,7 @@ def eingabe():
     logged_in_user = st.session_state.username
     blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
     measure_date = st.date_input("Datum", datetime.now(), format="DD.MM.YYYY")
-    measure_time = st.time_input("Uhrzeit", datetime.now())
+    measure_time = st.time_input("Uhrzeit", value = "now")
     insulingabe = st.checkbox ("Insulingabe erfolgt")
 
     st.button("Save", type="primary", on_click=save)
