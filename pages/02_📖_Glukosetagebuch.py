@@ -42,7 +42,9 @@ def init_tabs():
         # Translation dictionary
         translation_dict = {
             'True': 'Ja',
-            'False': 'Nein'
+            'False': 'Nein',
+            True: 'Ja',
+            False: 'Nein'
         }
 
         # Translate the 'Insulinabgabe' column
