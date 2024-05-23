@@ -1,6 +1,9 @@
 # GlucoseTracker
 App zur Blutzuckererfassung und Insulineinheitenrechner
 
+## Link zum Streamlit App
+https://glucose-tracker-42.streamlit.app
+
 ## Git konfigurieren
 folgende Befehle im Terminal eingeben:
 ```
