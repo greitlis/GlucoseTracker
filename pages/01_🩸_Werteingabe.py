@@ -35,7 +35,7 @@ def eingabe():
     zurich_now = utc_now.replace(tzinfo=pytz.utc).astimezone(zurich_timezone)
 
     measure_date = st.date_input("Datum", zurich_now, format="DD.MM.YYYY")
-    measure_time = st.time_input("Uhrzeit", value = zurich_now.time())
+    measure_time = st.time_input("Uhrzeit", value = zurich_now)
     insulingabe = st.checkbox ("Insulingabe erfolgt")
 
     st.button("Save", type="primary", on_click=save)
