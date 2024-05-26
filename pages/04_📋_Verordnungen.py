@@ -72,8 +72,8 @@ def eingabe_verordnungen():
         kurz = col1.selectbox("Kurz wirksames Insulin", kurzinsulin_werte, disabled = st.session_state.disabled, index = kurz_index)
         gabe_kurz_index = verabreichungsformen.index(gabe_kurz) if gabe_kurz in verabreichungsformen else 0
         gabe_kurz = col2.selectbox("Verabreichungsform", verabreichungsformen, key="gabe_kurz", disabled=st.session_state.disabled, index = gabe_kurz_index)
-        frequenz_kurz = col3.text_input("Wie oft?", disabled = st.session_state.disabled, value = frequenz_kurz)
-        wann_kurz = col4.text_input("Wann?", disabled = st.session_state.disabled, value= wann_kurz)
+        frequenz_kurz = col3.text_input(" ", disabled = st.session_state.disabled, value = frequenz_kurz)
+        wann_kurz = col4.text_input("", disabled = st.session_state.disabled, value= wann_kurz)
     
     st.button("Bearbeiten", on_click = enable, disabled= not st.session_state.disabled)
     st.button("Änderungen speichern", on_click = save_eingabe_verordnungen, disabled= st.session_state.disabled)
