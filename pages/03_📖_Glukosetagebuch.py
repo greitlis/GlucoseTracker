@@ -8,6 +8,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
+import plotly.express as px
+import plotly.graph_objects as go
 
 
 
@@ -74,7 +76,53 @@ def init_tabs():
         Werte['measure_time'] = Werte['measure_time'].astype(str)
         Werte['Datetime'] = pd.to_datetime(Werte['measure_date'] + ' ' + Werte['measure_time'])
         Werte = Werte.set_index('Datetime')
-        tab2.line_chart(data = st.session_state.glucose_data, x = "Datetime", y = ("blood_sugar"), color= None)
+        #tab2.line_chart(data = st.session_state.glucose_data, x = "Datetime", y = ("blood_sugar"), color= None)
+        fig = px.line(Werte, x= Werte.index, y= "blood_sugar", title= "Glukoseverlauf")
+        min_value = 3.5
+        max_value = 5.60
+        # Add horizontal lines for min and max values
+        fig.add_shape(
+            type="line",
+            x0 = Werte.index.min(),
+            x1= Werte.index.max(),
+            y0=min_value,
+            y1=min_value,
+            line=dict(color="Red", dash="dash"),
+            name="Min Value"
+        )
+
+        fig.add_shape(
+            type="line",
+            x0=Werte.index.min(),
+            x1=Werte.index.max(),
+            y0=max_value,
+            y1=max_value,
+            line=dict(color="Green", dash="dash"),
+            name="Max Value"
+        )
+
+        # Add annotations for min and max values
+        fig.add_annotation(
+            x=Werte.index.min(),
+            y=min_value,
+            text=f"Min Value: {min_value}",
+            showarrow=False,
+            yshift=10
+        )
+
+        fig.add_annotation(
+            x=Werte.index.min(),
+            y=max_value,
+            text=f"Max Value: {max_value}",
+            showarrow=False,
+            yshift=10
+        )
+        fig.update_layout(
+        plot_bgcolor='#b6e3fc',  # Change the plot area background color
+        xaxis=dict(gridcolor='#75b0bf'),  # Change the color of the x-axis gridlines
+        yaxis=dict(gridcolor='#75b0bf')   # Change the color of the y-axis gridlines
+        )
+        st.plotly_chart(fig)
         
 
 

@@ -4,3 +4,4 @@ matplotlib
 streamlit-authenticator
 streamlit
 reportlab
+plotly
