@@ -38,12 +38,12 @@ def main():
     data.init_github()
     init_login()
     init_logged_in()
-    nav.make_sidebar()  
+   #nav.make_sidebar()  
     usr.choice()
-    st.image("protokoll.jpg")
+    st.image("blooddrop2.jpg")
 
     if st.session_state.logged_in == True:
-        st.switch_page("pages/01_🩸_Werteingabe.py")
+        st.switch_page("pages/01_Willkommen.py")
      
 
 

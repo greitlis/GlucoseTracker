@@ -11,7 +11,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 
 
-st.set_page_config(page_title= "Glukosetagebuch", page_icon="📖", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title= "Glukosetagebuch", page_icon="📖", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 st.title("Glukosetagebuch")
 with st.container():
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     if st.session_state.get("logged_in", False)== False:
         st.error("Sie müssen sich zuerst einloggen.")
         st.stop()
-    data.init_dataframe()
+    data.init_dataframe_glucose_data()
     init_tabs() 
     st.button("log out", type="primary", on_click = logout)
   

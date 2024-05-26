@@ -6,7 +6,17 @@ from functions.data import DATA_COLUMNS, DATA_FILE
 import functions.data as data
 from navigation import logout
 
-st.set_page_config(page_title= "Glukosetracker", page_icon="🩸", layout="centered", initial_sidebar_state="auto", menu_items= None)
+st.set_page_config(page_title= "Werteingabe", page_icon="🩸", layout="wide", initial_sidebar_state="auto", menu_items= None)
+
+st.title("Werteingabe")
+
+with st.container():
+    col1, col2, col3 = st.columns(3)
+    col1.image("glucose2_2.jpg")
+    col2.image("blooddrop.jpg")
+    col3.image("glucose2_2.jpg")
+
+
 
 def eingabe():
     global blood_sugar
@@ -15,19 +25,11 @@ def eingabe():
     global logged_in_user
     global insulingabe
     
-    st.title("Glucosetracker")
-    with st.container():
-        col1, col2, col3 = st.columns(3)
-        col1.image("glucose2_2.jpg")
-        col2.image("blooddrop.jpg")
-        col3.image("glucose2_2.jpg")
-        
-    st.subheader("Werteingabe")
 
+        
     logged_in_user = st.session_state.username
     blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
-    
-    # Get the current time in UTC
+ # Get the current time in UTC
     utc_now = datetime.now(timezone.utc)
 
     # Convert UTC time to a European timezone (e.g., Berlin timezone)
@@ -38,7 +40,7 @@ def eingabe():
     measure_time = st.time_input("Uhrzeit", value = zurich_now)
     insulingabe = st.checkbox ("Insulingabe erfolgt")
 
-    st.button("Save", type="primary", on_click=save)
+    st.button("Speichern", type="primary", on_click=save)
 
 def save():
    
@@ -81,6 +83,6 @@ if __name__ == "__main__":
         st.error("Sie müssen sich zuerst einloggen.")
         st.stop()
         
-    data.init_dataframe()
+    data.init_dataframe_glucose_data()
     eingabe()
     st.button("log out", type="primary", on_click = logout) 

@@ -16,7 +16,7 @@ def make_sidebar():
     with st.sidebar:
         
         if st.session_state.get("logged_in", False):
-            st.page_link("pages/01_🩸_Werteingabe.py", label="Werteingabe", icon="🩸")
+            st.page_link("pages/Home.py", label="Home", icon= None)
 
             
         elif get_current_page_name() != "Home":
