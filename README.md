@@ -3,7 +3,7 @@ Der Glukose Tracker soll Kindern mit Insulinpflichtigem Diabetes helfen ihre Blu
 Die App ist bewusst übersichtlich und simpel gehalten, damit sie auch von jüngeren Nutzern einfach und selbständig bedient werden kann.
 
 ## Link zum Streamlit App
-https://glucose-tracker-42.streamlit.app
+https://glucosetracker-forkids.streamlit.app
 
 ## Git konfigurieren
 folgende Befehle im Terminal eingeben:
