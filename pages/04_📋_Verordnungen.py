@@ -115,7 +115,7 @@ def save_eingabe_verordnungen():
         df_all_users = pd.concat([df_all_users, entry_verordnungen_df], ignore_index=True)
     else:
         # If the user already exists in the DataFrame, update the entry
-        data.update_row_with_dict(df_all_users, entry_verordnungen, index)
+        data.update_row_with_dict(df_all_users, entry_verordnungen, index[0])
     
     # Save the updated DataFrame to GitHub
     commit_msg = f"add verordnung for {username}" 
