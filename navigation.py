@@ -29,5 +29,5 @@ def logout():
     st.session_state.logged_in = False
     st.session_state.username = None
     del st.session_state["glucose_data"]
-    del.st.session_state["verordnungen"]
+    del st.session_state["verordnungen"]
     st.info("Sie haben sich erfolgreich ausgeloggt")
