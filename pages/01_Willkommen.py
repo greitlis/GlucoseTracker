@@ -9,9 +9,10 @@ st.set_page_config(page_title= "Willkommen", page_icon= None, layout="wide", ini
 
 
 def set_welcome_page():
+    username = st.session_state.username
     with st.container(border = True):
         col1, col2 = st.columns(2, gap = "large")
-        col1.title("Willkommen")
+        col1.title(f"Willkommen {username}")
         col2.image("blooddrop_hello.jpg")
 
 
