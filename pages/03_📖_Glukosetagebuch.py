@@ -78,8 +78,8 @@ def init_tabs():
         Werte = Werte.set_index('Datetime')
         #tab2.line_chart(data = st.session_state.glucose_data, x = "Datetime", y = ("blood_sugar"), color= None)
         fig = px.line(Werte, x= Werte.index, y= "blood_sugar", title= "Glukoseverlauf")
-        min_value = 3.5
-        max_value = 5.60
+        min_value = 3.3
+        max_value = 6.7
         # Add horizontal lines for min and max values
         fig.add_shape(
             type="line",
