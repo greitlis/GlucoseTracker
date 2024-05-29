@@ -105,7 +105,7 @@ def init_tabs():
         fig.add_annotation(
             x=Werte.index.min(),
             y=min_value,
-            text=f"Min Value: {min_value}",
+            text=f"Unterer Referenzbereich: {min_value}",
             showarrow=False,
             yshift=10
         )
@@ -113,14 +113,16 @@ def init_tabs():
         fig.add_annotation(
             x=Werte.index.min(),
             y=max_value,
-            text=f"Max Value: {max_value}",
+            text=f"Oberer Referenzbereich: {max_value}",
             showarrow=False,
             yshift=10
         )
         fig.update_layout(
         plot_bgcolor='#b6e3fc',  # Change the plot area background color
-        xaxis=dict(gridcolor='#75b0bf'),  # Change the color of the x-axis gridlines
-        yaxis=dict(gridcolor='#75b0bf')   # Change the color of the y-axis gridlines
+        xaxis = dict(gridcolor='#75b0bf'),  # Change the color of the x-axis gridlines
+        yaxis = dict(gridcolor='#75b0bf'),   # Change the color of the y-axis gridlines
+        yaxis_title="Glukosewert",
+        xaxis_title="Datum und Uhrzeit"  # Rename the y-axis
         )
         st.plotly_chart(fig)
         
