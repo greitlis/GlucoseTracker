@@ -61,7 +61,7 @@ def eingabe_verordnungen():
 
         basisinsulin_werte = ["Insulatard", "Lantus", "Levemir", "Tresiba"]
         basis_index = basisinsulin_werte.index(basis) if basis in basisinsulin_werte else 0
-        basis = col1.selectbox("Basisinsulin", basisinsulin_werte,disabled = st.session_state.disabled, index = basis_index)
+        basis = col1.selectbox("🐌 Basisinsulin", basisinsulin_werte,disabled = st.session_state.disabled, index = basis_index)
         gabe_basis_index = verabreichungsformen.index(gabe_basis) if gabe_basis in verabreichungsformen else 0
         gabe_basis = col2.selectbox("Verabreichungsform", verabreichungsformen, key="gabe_basis", disabled=st.session_state.disabled, index = gabe_basis_index)
         frequenz = col3.text_input("Wie oft?", disabled = st.session_state.disabled, value = frequenz)
@@ -69,7 +69,7 @@ def eingabe_verordnungen():
         row2 = col1, col2, col3, col4 = st.columns(4)
         kurzinsulin_werte = ["Actrapid", "Novorapid"]
         kurz_index = kurzinsulin_werte.index(kurz) if kurz in kurzinsulin_werte else 0
-        kurz = col1.selectbox("Kurz wirksames Insulin", kurzinsulin_werte, disabled = st.session_state.disabled, index = kurz_index)
+        kurz = col1.selectbox("🚀 Kurz wirksames Insulin", kurzinsulin_werte, disabled = st.session_state.disabled, index = kurz_index)
         gabe_kurz_index = verabreichungsformen.index(gabe_kurz) if gabe_kurz in verabreichungsformen else 0
         gabe_kurz = col2.selectbox("Verabreichungsform", verabreichungsformen, key="gabe_kurz", disabled=st.session_state.disabled, index = gabe_kurz_index)
         frequenz_kurz = col3.text_input(" ", disabled = st.session_state.disabled, value = frequenz_kurz)
