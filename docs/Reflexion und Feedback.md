@@ -26,6 +26,6 @@ Alles in Allem denken wir, dass wir mit dem Gesamtresultat zufrieden sein könne
 Grundsätzlich finden wir das Entwickeln einer App spannend. Auch Programmieren kann Spass machen, wenn es dann funktioniert, so wie man das möchte. Dennnoch denken wir, dass mehr Hilfestellungen seitens der Dozierenden und Asisstenten hilfreich gewesen wären, das Ganze etwas entspannter über die Bühne zu bringen. 
 Unsere Vorschläge wären:
 
-    -Mehrere Asisstenten für die Übungsstunde --> so hat sicherlich jede Gruppe die Chance ihre Fragen zu besprechen.
-    -evtl. eine kurze Zusammenstellung mit Beispielen wie man die wichtigsten Grundfunktionen einer App programmieren könnte (bsp. Login, Eingabe von Text und Speichern, download der Eingabe als pdf ect.)
+    - Mehrere Asisstenten für die Übungsstunde --> so hat sicherlich jede Gruppe die Chance ihre Fragen zu besprechen.
+    - evtl. eine kurze Zusammenstellung mit Beispielen wie man die wichtigsten Grundfunktionen einer App programmieren könnte (bsp. Login, Eingabe von Text und Speichern, download der Eingabe als pdf ect.)
 
