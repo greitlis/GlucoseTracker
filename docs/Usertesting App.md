@@ -9,3 +9,10 @@ Nachdem wir den Glukose Tracker soweit fertiggestellt hatten und die Selbsttests
 - Die Bedienung ist einfach und klar.
 - Süsse Bilder von Bluttropfen und Glukosemolekülen.
 - Passende Icons zu den Überschriften im Seitenleistenmenü
+
+
+## Was sich die Testuser für ein Update der App wünschen würden:
+
+- Einen Pdf drucken Knopf auf für die Verordnungen
+- evtl. die Aufnahme des Schnelltest für die Ketone im Morgenurin
+- evtl. die Aufnahme der Insulingabe in die graphische Verlaufsübersicht
