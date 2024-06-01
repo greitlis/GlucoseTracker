@@ -16,5 +16,6 @@
 ## Advanced Version:
 - Layout der Eingabeseite: Tagebuchseite 
 - Zusätliche Seiten, wie Verlaufgrafik, Verordnungen
+- Anbindung API
 
   
