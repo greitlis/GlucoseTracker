@@ -40,7 +40,7 @@ def main():
     init_logged_in()
    #nav.make_sidebar()  
     usr.choice()
-    st.image("blooddrop2.jpg")
+    st.image("pictures/blooddrop2.jpg")
 
     if st.session_state.logged_in == True:
         st.switch_page("pages/01_Willkommen.py")

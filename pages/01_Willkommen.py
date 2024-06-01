@@ -5,6 +5,7 @@ from time import sleep
 import functions.data as data
 
 
+
 st.set_page_config(page_title= "Willkommen", page_icon= None, layout="wide", initial_sidebar_state="auto", menu_items= None)
 
 
@@ -13,11 +14,11 @@ def set_welcome_page():
     with st.container(border = True):
         col1, col2 = st.columns(2, gap = "large")
         col1.title(f"Willkommen {username}")
-        col2.image("blooddrop_hello.jpg")
+        col2.image("pictures/blooddrop_hello.jpg")
 
 
     st.subheader("GlukoseTracker for KIDS")
-    st.image("blooddrop_what.jpg")
+    st.image("pictures/blooddrop_what.jpg")
     st.write("Wie die APP funktioniert:")
 
     with st.container():

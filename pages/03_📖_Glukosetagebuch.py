@@ -18,9 +18,9 @@ st.set_page_config(page_title= "Glukosetagebuch", page_icon="📖", layout="wide
 st.title("Glukosetagebuch")
 with st.container():
         col1, col2, col3 = st.columns(3)
-        col1.image("glucose2_2.jpg")
-        col2.image("blooddrop_book2.jpg")
-        col3.image("glucose2_2.jpg")
+        col1.image("pictures/glucose2_2.jpg")
+        col2.image("pictures/blooddrop_book2.jpg")
+        col3.image("pictures/glucose2_2.jpg")
 
 
 

@@ -12,9 +12,9 @@ st.title("Werteingabe")
 
 with st.container():
     col1, col2, col3 = st.columns(3)
-    col1.image("glucose2_2.jpg")
-    col2.image("blooddrop.jpg")
-    col3.image("glucose2_2.jpg")
+    col1.image("pictures/glucose2_2.jpg")
+    col2.image("pictures/blooddrop.jpg")
+    col3.image("pictures/glucose2_2.jpg")
 
 
 

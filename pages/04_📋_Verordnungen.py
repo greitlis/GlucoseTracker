@@ -10,7 +10,7 @@ st.set_page_config(page_title= "Verordnungen", page_icon="📋", layout="wide", 
 with st.container():
     col1, col2 = st.columns(2, gap = "small")
     col1.title("Verordnungen")
-    col2.image("protokoll.jpg")
+    col2.image("pictures/protokoll.jpg")
 
 
 def eingabe_verordnungen():
