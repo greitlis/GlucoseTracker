@@ -3,7 +3,14 @@ Der Glukose Tracker soll Kindern mit Insulinpflichtigem Diabetes helfen ihre Blu
 Die App ist bewusst übersichtlich und simpel gehalten, damit sie auch von jüngeren Nutzern einfach und selbständig bedient werden kann.
 
 ## Secrets einrichten
-Für die Verbindung zum Daten-Repo braucht es eine `secrets.toml` Datei, welche lokal im Ordner `.streamlit` liegt. Die Datei ist und wird nicht im Github hochgeladen. 
+Für die Verbindung zum Daten-Repo braucht es eine `secrets.toml` Datei, welche lokal im Ordner `.streamlit` liegt. Die Datei ist und wird nicht im Github hochgeladen. Folgendes in der secrets.toml Datei eingeben:
+
+```
+[github]
+owner = "username"
+repo = "glucose-database"
+token = "xyz"
+```
 
 Das Daten-Repo (privat) ist unter folgendem Link zu finden:
 https://github.com/greitlis/glucose-database
