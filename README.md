@@ -20,7 +20,8 @@ Um die Streamlit App zu starten muss folgender Befehl in einem Terminal ausgefü
 ```
 streamlit run Home.py
 ```
-
+## Debugging mit VS Code
+Zum Starten die Datei öffnen, die man debuggen will (Home.py). Dannach auf "Run and Debug" und das Profil `Python Debugger: Current File Streamlit` auswählen.
 
 ## Link zum Streamlit App
 https://glucosetracker-forkids.streamlit.app
