@@ -1,9 +1,10 @@
-## Persona 1 (noch in Abklärung)
-### Beschreibung der Person (wird ergänzt)
-Junger Mann, der im Erwachsenenalter die Diagnose Diabetes erhalten hat.
-Vorlieben: Technick, Sport, Familienmensch
+# Persona
 
-## Persona 2 (fiktiv)
+Leider kennen wir alle niemanden mit Diabtes mellitus, daher haben wir eine fiktive Person gewählt.
+
+
+## Judith Schmidt (fiktiv)
+
 ### Beschreibung der Person
 Judith Schmidt ist eine 35-jährige Diabetikerin (Typ1) und Lehrerin mit einer Leidenschaft für Literatur und Kunst. Sie legt Wert auf einen gesunden Lebensstil und sucht ständig nach Möglichkeiten, ihre Diabetes besser zu managen.
 
