@@ -28,7 +28,7 @@ def eingabe():
 
         
     logged_in_user = st.session_state.username
-    blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Type a number...", min_value=0.0, max_value=35.0, step=0.1)
+    blood_sugar = st.number_input("Blutzuckerwert in mmol/l", value=None, placeholder="Wert eingeben...", min_value=0.0, max_value=35.0, step=0.1)
  # Get the current time in UTC
     utc_now = datetime.now(timezone.utc)
 
