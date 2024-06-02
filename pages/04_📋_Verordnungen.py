@@ -140,4 +140,4 @@ if __name__ == "__main__":
     
     
 
-    st.button("log out", type="primary", on_click = logout)
+    st.button("Log out", type="primary", on_click = logout)

@@ -13,15 +13,15 @@ def choice():
     global pwd
     global conf_pwd
 
-    
+    choice_login = "Login"  
 
-    choice = st.selectbox("Login / neu registrieren", ["login", "newUser"])
-    if choice == "login":
+    choice = st.selectbox("Login / neu registrieren", [choice_login, "Registrieren"])
+    if choice == choice_login:
 
         userName = st.text_input("Benutzername")
         pwd = st.text_input("Passwort", type= 'password')
 
-        st.button("login", type="primary", on_click = userLogin)
+        st.button("Login", type="primary", on_click = userLogin)
 
     else:
         

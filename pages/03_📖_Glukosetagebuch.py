@@ -134,5 +134,5 @@ if __name__ == "__main__":
         st.stop()
     data.init_dataframe_glucose_data()
     init_tabs() 
-    st.button("log out", type="primary", on_click = logout)
+    st.button("Log out", type="primary", on_click = logout)
   

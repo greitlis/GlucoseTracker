@@ -85,4 +85,4 @@ if __name__ == "__main__":
         
     data.init_dataframe_glucose_data()
     eingabe()
-    st.button("log out", type="primary", on_click = logout) 
+    st.button("Log out", type="primary", on_click = logout) 

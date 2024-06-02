@@ -33,5 +33,5 @@ if __name__ == "__main__":
         st.stop()
     data.init_dataframe_glucose_data()
     set_welcome_page()
-    st.button("log out", type="primary", on_click = logout)
+    st.button("Log out", type="primary", on_click = logout)
 
