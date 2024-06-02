@@ -31,8 +31,8 @@ def init_tabs():
         VERLAUF_df = st.dataframe(data = df[DATA_COLUMNS], use_container_width=True,
                               column_order= ("measure_date", "measure_time", "blood_sugar", "Insulingabe"),
                               column_config= {
-                                "measure_date": st.column_config.Column(label="Datum"),
-                                "measure_time": st.column_config.Column(label="Uhrzeit"),
+                                "measure_date": st.column_config.DateColumn(label="Datum",format="DD.MM.YYYY"),
+                                "measure_time": st.column_config.DatetimeColumn(label="Uhrzeit",format="HH:mm"),
                                 "blood_sugar": st.column_config.Column(label="Glukosewert"),
                                 "Insulingabe" : st.column_config.CheckboxColumn(
                                 "Insulingabe", 
