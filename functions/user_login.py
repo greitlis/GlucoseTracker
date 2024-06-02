@@ -15,7 +15,7 @@ def choice():
 
     choice_login = "Login"  
 
-    choice = st.selectbox("Login / neu registrieren", [choice_login, "Registrieren"])
+    choice = st.selectbox("Login / Registrieren", [choice_login, "Registrieren"])
     if choice == choice_login:
 
         userName = st.text_input("Benutzername")
@@ -29,7 +29,7 @@ def choice():
         pwd = st.text_input("Passwort", type = 'password')
         conf_pwd = st.text_input("Passwort bestätigen", type = 'password')
 
-        if st.button("registrieren", type = "primary"):
+        if st.button("Registrieren", type = "primary"):
             registerUser()
 
 
